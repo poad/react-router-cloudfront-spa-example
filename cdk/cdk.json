@@ -1,0 +1,37 @@
+{
+  "app": "pnpm lint && pnpm dlx tsx bin/cdk.ts",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "yarn.lock",
+      "node_modules",
+      "test"
+    ]
+  },
+  "requireApproval": "never",
+  "versionReporting": false,
+  "pathMetadata": false,
+  "context": {
+    "default": {
+      "stackName": "remix-cloudfront-spa-example",
+      "bucketName": "remix-cloudfront-spa-example",
+      "cloudfront": {
+        "comment": "for Remix SPA CloudFront",
+        "originAccessControl": {
+          "functionConfig": {
+            "name": "remix-spa-index-forward"
+          },
+          "name": "remix-cloudfront-spa-example-oac"
+        }
+      }
+    }
+  }
+}
