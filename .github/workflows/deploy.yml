@@ -67,5 +67,4 @@ jobs:
     - name: deploy (cdk)
       working-directory: cdk
       run: |
-        cdk deploy \
-          -c appkName=${{ env.APP_NANE }}
+        cdk deploy
