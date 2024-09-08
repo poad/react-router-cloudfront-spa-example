@@ -34,7 +34,7 @@ if [ $result -ne 0 ]; then
   cd "${CUR}" || exit
   exit $result
 fi
-git pull --prune && git commit -am "Bumps node modules" && git push --force-with-lease
+git pull --prune && git commit -am "Bumps node modules" && git push
 result=$?
 if [ $result -ne 0 ]; then
   cd "${CUR}" || exit
