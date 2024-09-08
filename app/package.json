@@ -6,8 +6,8 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
-    "lint": "eslint 'app/**/*.{jsx,ts,tsx}'",
-    "lint-fix": "eslint --fix 'app/**/*.{jsx,ts,tsx}'",
+    "lint": "eslint 'app/**/*.{ts,tsx}'",
+    "lint-fix": "eslint --fix 'app/**/*.{ts,tsx}'",
     "preview": "vite preview",
     "typecheck": "tsc"
   },
