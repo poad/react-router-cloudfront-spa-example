@@ -35,7 +35,7 @@ export default tseslint.config(
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
   {
-    files: ['app/**/*.{jsx,ts,tsx}'],
+    files: ['app/**/*.{ts,tsx}'],
     ...importPlugin.flatConfigs.recommended,
     ...importPlugin.flatConfigs.typescript,
     languageOptions: {

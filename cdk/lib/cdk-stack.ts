@@ -72,6 +72,20 @@ export class CdkStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
+    s3bucket.addToResourcePolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        actions: ["s3:*"],
+        principals: [new iam.AccountPrincipal(this.account)],
+        resources: [`${s3bucket.bucketArn}/*`],
+        conditions: {
+          StringEquals: {
+            "s3:ResourceAccount": this.account,
+          },
+        },
+      }),
+    );
+
     // CloudFront Functionリソースの定義
     const { functionConfig } = originAccessControl;
     compileBundles();
@@ -106,20 +120,6 @@ export class CdkStack extends cdk.Stack {
       },
       httpVersion: cloudfront.HttpVersion.HTTP2_AND_3,
     });
-    s3bucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        sid: 'AllowCloudFrontServicePrincipalReadOnly',
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.ServicePrincipal('cloudfront.amazonaws.com')],
-        actions: ['s3:GetObject'],
-        resources: [`${s3bucket.bucketArn}/*`],
-        conditions: {
-          StringEquals: {
-            'AWS:SourceArn': `arn:aws:cloudfront::${this.account}:distribution/${cf.distributionId}`,
-          },
-        },
-      }),
-    );
 
     const deployRole = new iam.Role(this, "DeployWebsiteRole", {
       roleName: `${bucketName}-deploy-role`,
@@ -136,21 +136,6 @@ export class CdkStack extends cdk.Stack {
         }),
       },
     });
-
-    s3bucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        sid: 'DenyUnEncryptedObjectUploads',
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.StarPrincipal()],
-        actions: ['s3:PutObject'],
-        resources: [`${s3bucket.bucketArn}/*`],
-        conditions: {
-          StringEquals: {
-            's3:x-amz-server-side-encryption': 'aws:kms',
-          },
-        },
-      }),
-    );
 
     new deployment.BucketDeployment(this, "DeployWebsite", {
       sources: [deployment.Source.asset(`${process.cwd()}/../app/build/client`)],
