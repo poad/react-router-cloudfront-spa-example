@@ -118,8 +118,8 @@ importers:
         specifier: ^8.4.49
         version: 8.4.49
       tailwindcss:
-        specifier: ^3.4.14
-        version: 3.4.14(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
+        specifier: ^3.4.15
+        version: 3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -136,8 +136,8 @@ importers:
   cdk:
     dependencies:
       aws-cdk-lib:
-        specifier: ^2.166.0
-        version: 2.166.0(constructs@10.4.2)
+        specifier: ^2.167.0
+        version: 2.167.0(constructs@10.4.2)
       constructs:
         specifier: ^10.4.2
         version: 10.4.2
@@ -1374,8 +1374,8 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
-  aws-cdk-lib@2.166.0:
-    resolution: {integrity: sha512-FAsIz/CpczbMrcShgvTWNp3kcGN6IDojJWNLqHioTRsTekcyN3OPmKvQJXUNWL0fnhTd8biFXC2esg6kM19xZw==}
+  aws-cdk-lib@2.167.0:
+    resolution: {integrity: sha512-q8bHxUUnMGfHe4TWQHYUu4eqdy9qkEWuml3vOnZINF3l9XdKOo/S5grsyVzFAjjBjwCH8zAxKicNT0uhwBjqLg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
@@ -3435,8 +3435,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tailwindcss@3.4.14:
-    resolution: {integrity: sha512-IcSvOcTRcUtQQ7ILQL5quRDg7Xs93PdJEk1ZLbhhvJc7uj/OAhYOnruEiwnGgBvUtaUAJ8/mhSw1o8L2jCiENA==}
+  tailwindcss@3.4.15:
+    resolution: {integrity: sha512-r4MeXnfBmSOuKUWmXe6h2CcyfzJCEk4F0pptO5jlnYSIViUkVmsawj80N5h2lO3gwcmSb4n3PuN+e+GC1Guylw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -5069,7 +5069,7 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  aws-cdk-lib@2.166.0(constructs@10.4.2):
+  aws-cdk-lib@2.167.0(constructs@10.4.2):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.211
       '@aws-cdk/asset-kubectl-v20': 2.1.3
@@ -7608,7 +7608,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  tailwindcss@3.4.14(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)):
+  tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
