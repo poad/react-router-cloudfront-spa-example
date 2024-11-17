@@ -4,9 +4,11 @@ import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import stylisticTs from '@stylistic/eslint-plugin-ts';
 import tseslint from 'typescript-eslint';
+
 export default tseslint.config(
   eslint.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
   {
     ignores: [
       '**/*.d.ts',
@@ -19,8 +21,6 @@ export default tseslint.config(
       'cdk.out',
       'dist',
     ],
-  },
-  {
     files: ['src/*.ts', 'src/**/*.ts'],
     plugins: {
       '@stylistic': stylistic,
