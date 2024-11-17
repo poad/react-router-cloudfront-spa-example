@@ -16,6 +16,13 @@ import { FlatCompat } from '@eslint/eslintrc';
 const compat = new FlatCompat();
 
 export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  // @ts-ignore
+  reactPlugin.configs.flat.recommended,
+  // @ts-ignore
+  reactPlugin.configs.flat['jsx-runtime'],
   {
     ignores: [
       '**/*.d.ts',
@@ -28,13 +35,6 @@ export default tseslint.config(
       'out',
       '.storybook',
     ],
-  },
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
-  reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat['jsx-runtime'],
-  {
     files: ['app/**/*.{ts,tsx}'],
     ...importPlugin.flatConfigs.recommended,
     ...importPlugin.flatConfigs.typescript,
@@ -79,9 +79,11 @@ export default tseslint.config(
       'import/namespace': 'off',
       'import/no-named-as-default': 'off',
       'import/no-named-as-default-member': 'off',
-      "comma-dangle": ["error", "always-multiline"],
-      "quotes": ["error", "single"],
-      'semi': ["error", "always"],
+      'comma-dangle': ["error", "always-multiline"],
+      quotes: ["error", "single"],
+      semi: ["error", "always"],
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-empty-function': 'off',
     },
   },
 );

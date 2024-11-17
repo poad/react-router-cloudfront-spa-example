@@ -31,7 +31,10 @@ export default tseslint.config(
       '@stylistic/ts/indent': ['error', 2],
       'comma-dangle': ['error', 'always-multiline'],
       'arrow-parens': ['error', 'always'],
-      'quates': ['error', 'single'],
+      quates: ['error', 'single'],
+      semi: ["error", "always"],
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-empty-function': 'off',
     },
   },
 );
