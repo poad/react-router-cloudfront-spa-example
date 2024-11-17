@@ -100,7 +100,7 @@ export class CdkStack extends cdk.Stack {
     ];
 
     const oac = new cloudfront.S3OriginAccessControl(this, 'OriginAccessControl', {
-      originAccessControlName: originAccessControl!.functionConfig.name,
+      originAccessControlName: originAccessControl?.functionConfig.name,
       signing: cloudfront.Signing.SIGV4_NO_OVERRIDE,
     });
 
