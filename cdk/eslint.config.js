@@ -33,8 +33,6 @@ export default tseslint.config(
       'arrow-parens': ['error', 'always'],
       quates: ['error', 'single'],
       semi: ["error", "always"],
-      '@typescript-eslint/no-unused-expressions': 'off',
-      '@typescript-eslint/no-empty-function': 'off',
     },
   },
 );
