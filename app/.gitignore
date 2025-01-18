@@ -137,3 +137,7 @@ node_modules
 .env
 
 !eslint.config.js
+
+# React Router
+/.react-router/
+/build/

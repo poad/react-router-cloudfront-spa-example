@@ -1,5 +1,5 @@
 {
-  "name": "@remix-cloudfront-spa-example/cdk",
+  "name": "@react-router-cloudfront-spa-example/cdk",
   "version": "0.1.0",
   "bin": "bin/cloudfront-cdn-template.js",
   "type": "module",
