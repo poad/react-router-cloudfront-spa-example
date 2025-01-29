@@ -21,15 +21,15 @@
   "pathMetadata": false,
   "context": {
     "default": {
-      "stackName": "remix-cloudfront-spa-example",
-      "bucketName": "remix-cloudfront-spa-example",
+      "stackName": "react-router-cloudfront-spa-example",
+      "bucketName": "react-router-cloudfront-spa-example",
       "cloudfront": {
         "comment": "for Remix SPA CloudFront",
         "originAccessControl": {
           "functionConfig": {
-            "name": "remix-spa-index-forward"
+            "name": "react-router-spa-index-forward"
           },
-          "name": "remix-cloudfront-spa-example-oac"
+          "name": "react-router-cloudfront-spa-example-oac"
         }
       }
     }
