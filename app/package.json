@@ -31,7 +31,7 @@
     "@tailwindcss/vite": "^4.0.12",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "cookie": "^1.0.2",
     "eslint": "^9.22.0",
     "eslint-import-resolver-typescript": "^3.8.3",
